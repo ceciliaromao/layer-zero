@@ -54,20 +54,29 @@ const config: HardhatUserConfig = {
         ],
     },
     networks: {
-        'arbitrum-sepolia': {
+        'optimism-sepolia-testnet': {
+            eid: EndpointId.OPTSEP_V2_TESTNET,
+            url: process.env.RPC_URL_OP_SEPOLIA || 'https://optimism-sepolia.gateway.tenderly.co',
+            accounts,
+        },
+        'arbitrum-sepolia-testnet': {
             eid: EndpointId.ARBSEP_V2_TESTNET,
             url: process.env.RPC_URL_ARB_SEPOLIA || 'https://arbitrum-sepolia.gateway.tenderly.co',
             accounts,
         },
-        'base-sepolia': {
-            eid: EndpointId.BASESEP_V2_TESTNET,
-            url: process.env.RPC_URL_BASE_SEPOLIA || 'https://base-sepolia.gateway.tenderly.co',
-            accounts,
-        },
-        hardhat: {
-            // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit
-            allowUnlimitedContractSize: true,
-        },
+        //     eid: EndpointId.ARBSEP_V2_TESTNET,
+        //     url: process.env.RPC_URL_ARB_SEPOLIA || 'https://arbitrum-sepolia.gateway.tenderly.co',
+        //     accounts,
+        // },
+        // 'base-sepolia': {
+        //     eid: EndpointId.BASESEP_V2_TESTNET,
+        //     url: process.env.RPC_URL_BASE_SEPOLIA || 'https://base-sepolia.gateway.tenderly.co',
+        //     accounts,
+        // },
+        // hardhat: {
+        //     // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit
+        //     allowUnlimitedContractSize: true,
+        // },
     },
     namedAccounts: {
         deployer: {
