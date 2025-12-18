@@ -54,30 +54,16 @@ const config: HardhatUserConfig = {
         ],
     },
     networks: {
-        'ethereum-sepolia': {
-            eid: EndpointId.SEPOLIA_V2_TESTNET,
-            url: process.env.RPC_URL_ETHEREUM_SEPOLIA || 'https://sepolia.gateway.tenderly.co',
+        'base-sepolia': {
+            eid: EndpointId.BASESEP_V2_TESTNET,
+            url: 'https://base-sepolia-rpc.publicnode.com',
             accounts,
         },
-        'polygon-amoy': {
-            eid: EndpointId.AMOY_V2_TESTNET,
-            url: process.env.RPC_URL_POLYGON_AMOY || 'https://polygon-amoy.gateway.tenderly.co',
+        'avalanche-testnet': {
+            eid: EndpointId.AVALANCHE_V2_TESTNET,
+            url: 'https://api.avax-test.network/ext/bc/C/rpc',
             accounts,
         },
-        // 'arbitrum-sepolia': {
-        //     eid: EndpointId.ARBSEP_V2_TESTNET,
-        //     url: process.env.RPC_URL_ARB_SEPOLIA || 'https://arbitrum-sepolia.gateway.tenderly.co',
-        //     accounts,
-        // },
-        // 'base-sepolia': {
-        //     eid: EndpointId.BASESEP_V2_TESTNET,
-        //     url: process.env.RPC_URL_BASE_SEPOLIA || 'https://base-sepolia.gateway.tenderly.co',
-        //     accounts,
-        // },
-        // hardhat: {
-        //     // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit
-        //     allowUnlimitedContractSize: true,
-        // },
     },
     namedAccounts: {
         deployer: {

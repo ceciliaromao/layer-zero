@@ -10,5 +10,7 @@ contract MyOFT is OFT {
         string memory _symbol,
         address _lzEndpoint,
         address _owner
-    ) OFT(_name, _symbol, _lzEndpoint, _owner) Ownable(_owner) {}
+    ) OFT(_name, _symbol, _lzEndpoint, _owner) Ownable(_owner) {
+        _mint(_owner, 1000000000000000000000000); // 1 million tokens
+    }
 }
